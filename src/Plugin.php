@@ -25,8 +25,8 @@ class Plugin
     /**
      * Plugin constructor.
      *
-     * @param RabbitPlugin   $plugin The Rabbit plugin instance.
-     * @param ConfigValues   $config The configuration values.
+     * @param RabbitPlugin $plugin The Rabbit plugin instance.
+     * @param ConfigValues $config The configuration values.
      */
     public function __construct(RabbitPlugin $plugin, ConfigValues $config)
     {
@@ -55,7 +55,14 @@ class Plugin
         } catch (Exception $e) {
             // Handle exceptions by displaying an admin notice.
             add_action('admin_notices', function () use ($e) {
-                AdminNotice::permanent(['type' => 'error', 'message' => $e->getMessage()]);
+                \Rabbit\Redirects\AdminNotice::permanent([
+                    'type'    => 'error',
+                    'message' => sprintf(
+                        /* translators: %s: Error message */
+                        __('Error in Book Information plugin: %s', 'book-information'),
+                        esc_html($e->getMessage())
+                    ),
+                ]);
             });
 
             // Optionally log the error if logging is enabled.
@@ -72,7 +79,7 @@ class Plugin
     protected function loadConfigurations()
     {
         // Example of accessing a configuration value.
-        $optionOne = $this->config->get('options.option_one', 'default_value');
+        $optionOne = $this->config->get('options.option_one', __('default_value', 'book-information'));
 
         // Use configuration values as needed.
         // ... (additional configuration handling if necessary)
@@ -83,7 +90,6 @@ class Plugin
      */
     protected function registerServiceProviders()
     {
-        // Service providers are registered in the main plugin file (book-information.php).
         // Register service providers here
         // Example:
         // $this->plugin->addServiceProvider(new CustomServiceProvider($this->config));
