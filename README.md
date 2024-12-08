@@ -1,4 +1,4 @@
-# Book Information Management
+# Book Information Wordpress Plugin
 
 **Contributors:** Pooriya  
 **Requires at least:** 5.8  
