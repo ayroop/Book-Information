@@ -97,6 +97,3 @@ npm-debug.log*
 # Ignore backup files
 *.bak
 *~
-
-# Ignore lock files
-proxy.lock
