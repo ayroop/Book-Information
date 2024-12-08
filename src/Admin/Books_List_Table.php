@@ -20,7 +20,7 @@ class Books_List_Table extends WP_List_Table
     /**
      * Constructor.
      *
-     * @param ConfigValues $config Configuration values.
+     * @param ConfigValues   $config Configuration values.
      * @param \Rabbit\Plugin $plugin The plugin instance.
      */
     public function __construct(ConfigValues $config, $plugin)
@@ -66,6 +66,7 @@ class Books_List_Table extends WP_List_Table
             case 'post_id':
                 $post_title = get_the_title($item['post_id']);
                 $edit_link  = get_edit_post_link($item['post_id']);
+
                 return sprintf(
                     '<a href="%s">%s</a>',
                     esc_url($edit_link),
@@ -119,7 +120,7 @@ class Books_List_Table extends WP_List_Table
             $ids = array_map('intval', $ids);
 
             /** @var \BookInformation\Models\Book $bookModel */
-            $bookModel = \BookInformationPlugin()->getApplication()->get('book_model');
+            $bookModel = $this->plugin->get('book_model');
             $bookModel::destroy($ids);
         }
     }
