@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Book Information 1.0.0\n"
+"POT-Creation-Date: [Insert Date]\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: book-information.php:10
+msgid "Error initializing Book Information plugin: %s"
+msgstr ""
+
+#: src/Plugin.php:35
+msgid "Error in Book Information plugin: %s"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:23
+msgid "Book"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:24
+msgid "Books"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:37 src/Admin/Books_List_Table.php:46
+msgid "ID"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:38
+msgid "Book Title"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:39
+msgid "ISBN"
+msgstr ""
+
+#: src/Admin/Books_List_Table.php:75
+msgid "Delete"
+msgstr ""
+
+#: src/Providers/AdminPageServiceProvider.php:53
+msgid "Books Info"
+msgstr ""
+
+#: src/Providers/AdminPageServiceProvider.php:54
+msgid "Books Info"
+msgstr ""
+
+#: src/Providers/AdminPageServiceProvider.php:71
+msgid "Books Information"
+msgstr ""
+
+#: src/Providers/PostTypeServiceProvider.php:112
+msgid "ISBN Number"
+msgstr ""
+
+#: src/Providers/PostTypeServiceProvider.php:143
+msgid "ISBN"
+msgstr ""
+
+#: src/Providers/PostTypeServiceProvider.php:173
+msgid "Post type configuration is missing."
+msgstr ""
+
+#: src/Providers/PostTypeServiceProvider.php:211
+msgid "Taxonomies configuration is missing."
+msgstr ""
+
+#: src/Providers/DatabaseServiceProvider.php:56
+msgid "Database configuration is missing."
+msgstr ""
+
+#: src/Providers/CustomLoggerServiceProvider.php:38
+msgid "development"
+msgstr ""
+
+#: src/Providers/CustomLoggerServiceProvider.php:39
+msgid "production"
+msgstr ""
+
+# The labels for the custom post type 'book' 
+#: config/plugin.php:...
+msgid "Books"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Add New"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Add New Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "New Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Edit Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "View Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "All Books"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Search Books"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Parent Book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Parent Book:"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "No books found."
+msgstr ""
+
+#: config/plugin.php:...
+msgid "No books found in Trash."
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Book Cover Image"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Set cover image"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Remove cover image"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Use as cover image"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Book Archives"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Insert into book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Uploaded to this book"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Filter books list"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Books list navigation"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Books list"
+msgstr ""
+
+# The labels for the taxonomy 'publisher'
+#: config/plugin.php:...
+msgid "Publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Search Publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Popular Publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "All Publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Parent Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Parent Publisher:"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Edit Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "View Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Update Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Add New Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "New Publisher Name"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Separate publishers with commas"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Add or remove publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Choose from the most used publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "No publishers found."
+msgstr ""
+
+#: config/plugin.php:...
+msgid "No publishers"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Publishers list navigation"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Publishers list"
+msgstr ""
+
+# Similar entries for 'book_author' taxonomy labels...
+
+# Labels in the List Table
+#: config/plugin.php:...
+msgid "Title"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Author"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Publisher"
+msgstr ""
+
+#: config/plugin.php:...
+msgid "Date"
+msgstr ""
