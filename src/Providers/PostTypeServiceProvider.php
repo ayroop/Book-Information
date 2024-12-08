@@ -89,6 +89,9 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
             $labels = $postTypeConfig['labels'] ?? [];        // Labels for the admin UI.
             $args   = $postTypeConfig['args'] ?? [];          // Additional arguments.
 
+            // Ensure labels are translated.
+            $labels = $this->translateLabels($labels);
+
             // Assign labels to the arguments array.
             $args['labels'] = $labels;
 
@@ -96,7 +99,10 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
             register_post_type($slug, $args);
         } else {
             // Handle missing configuration by throwing an exception.
-            throw new Exception('Post type configuration is missing.');
+            throw new Exception(
+                /* translators: Error message when post type configuration is missing */
+                __('Post type configuration is missing.', 'book-information')
+            );
         }
     }
 
@@ -118,6 +124,9 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
                 $labels = $config['labels'] ?? [];              // Labels for the taxonomy.
                 $args   = $config['args'] ?? [];                // Additional arguments.
 
+                // Ensure labels are translated.
+                $labels = $this->translateLabels($labels);
+
                 // Assign labels and hierarchical setting to arguments.
                 $args['labels']       = $labels;
                 $args['hierarchical'] = $config['hierarchical'] ?? false;
@@ -127,7 +136,10 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
             }
         } else {
             // Handle missing configuration by throwing an exception.
-            throw new Exception('Taxonomies configuration is missing.');
+            throw new Exception(
+                /* translators: Error message when taxonomies configuration is missing */
+                __('Taxonomies configuration is missing.', 'book-information')
+            );
         }
     }
 
@@ -223,7 +235,6 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
         update_post_meta($post_id, $meta_key, $isbn);
 
         // Optionally save ISBN to a custom table if necessary.
-        // Note: Ensure this aligns with your plugin's design and avoids redundancy.
         /** @var \BookInformation\Models\Book $bookModel */
         $bookModel = $this->plugin->get('book_model');
 
@@ -232,5 +243,24 @@ class PostTypeServiceProvider extends AbstractServiceProvider implements Bootabl
             ['post_id' => $post_id],
             ['isbn'    => $isbn]
         );
+    }
+
+    /**
+     * Translate labels recursively.
+     *
+     * @param array $labels Array of labels to translate.
+     *
+     * @return array Translated labels.
+     */
+    private function translateLabels(array $labels)
+    {
+        foreach ($labels as $key => $label) {
+            if (is_array($label)) {
+                $labels[$key] = $this->translateLabels($label);
+            } else {
+                $labels[$key] = __($label, 'book-information');
+            }
+        }
+        return $labels;
     }
 }
