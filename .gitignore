@@ -1,99 +1,55 @@
-# Ignore Composer vendor directory
+# Composer dependencies
 /vendor/
 
-# Ignore node modules (if any)
+# Node.js dependencies
 /node_modules/
+/package-lock.json
+/yarn.lock
 
-# Ignore OS-specific files
+# OS-specific files
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Icon?
 __MACOSX/
 
-# Ignore IDE/editor-specific files
+# IDE/editor-specific files
 /.idea/
 /.vscode/
-/*.sublime-project
-/*.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 
-# Ignore logs and databases
-debug.log
+# Logs and databases
 *.log
 *.sql
 *.sqlite
+debug.log
 
-# Ignore built asset maps
-/assets/css/*.css.map
-/assets/js/*.js.map
-
-# Ignore Composer lock file (optional)
-composer.lock
-
-# Ignore environment files
+# Environment files
 .env
 .env.local
 
-# Ignore WordPress configuration files
-/wp-config.php
-/.htaccess
+# WordPress configuration files
+wp-config.php
+.htaccess
 
-# Ignore package manager lock files
-package-lock.json
-yarn.lock
-
-# Ignore compiled Python files
-*.pyc
-*.pyo
-
-# Ignore tests and documentation (if not needed)
-/tests/
-/docs/
-
-# Ignore deployment scripts (if any)
-/deploy/
-
-# Ignore cache and temporary files
+# Cache and temporary files
 .cache/
 *.tmp
+*.bak
+*~
 
-# Ignore PHPStorm project files (if any)
-/.idea/
-
-# Ignore Mac storage files
-.DS_Store
-
-# Ignore Yarn integrity file
-.yarn-integrity
-
-# Ignore NPM debug log
-npm-debug.log*
-
-# Ignore coverage reports
-/coverage/
-
-# Ignore ESLint cache
-.eslintcache
-
-# Ignore Sass cache
-.sass-cache/
-
-# Ignore stylelint cache
-.stylelintcache
-
-# Ignore build files (if any)
+# Build directories
 /build/
-
-# Ignore dist files (if any)
 /dist/
 
-# Ignore language files do not need to be committed
+# Language files
 /languages/*.mo
 /languages/*.po
 
-# Ignore Eloquent cache (if used)
-._cache/
-
-# Ignore backup files
-*.bak
-*~
+# Misc
+.npm-debug.log*
+.yarn-integrity
+.eslintcache
+.sass-cache/
+.stylelintcache
