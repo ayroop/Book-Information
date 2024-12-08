@@ -8,15 +8,31 @@ use Configula\ConfigValues;
 
 class AdminPageServiceProvider extends AbstractServiceProvider implements BootablePluginProviderInterface
 {
+    /**
+     * @var ConfigValues
+     */
     protected $config;
+
+    /**
+     * @var \Rabbit\Plugin
+     */
     protected $plugin;
 
+    /**
+     * Constructor.
+     *
+     * @param ConfigValues   $config Configuration values.
+     * @param \Rabbit\Plugin $plugin The plugin instance.
+     */
     public function __construct(ConfigValues $config, $plugin)
     {
         $this->config = $config;
         $this->plugin = $plugin;
     }
 
+    /**
+     * Register services.
+     */
     public function register()
     {
         // No services to register here
@@ -59,7 +75,7 @@ class AdminPageServiceProvider extends AbstractServiceProvider implements Bootab
     /**
      * Render the Books Info admin page.
      */
-        public function renderBooksInfoPage()
+    public function renderBooksInfoPage()
     {
         echo '<div class="wrap"><h1>' . esc_html__('Books Information', 'book-information') . '</h1>';
 
@@ -74,9 +90,13 @@ class AdminPageServiceProvider extends AbstractServiceProvider implements Bootab
         $listTable->prepare_items();
         ?>
         <form method="post">
-        <?php
-        $listTable->display();
-        ?>
+            <?php
+            // Add a nonce field for security
+            wp_nonce_field('book_information_list_table', '_book_information_nonce');
+
+            // Display the list table
+            $listTable->display();
+            ?>
         </form>
         <?php
         echo '</div>';
