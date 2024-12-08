@@ -11,16 +11,27 @@ use Rabbit\Contracts\BootablePluginProviderInterface;
 class DatabaseServiceProvider extends AbstractServiceProvider implements BootablePluginProviderInterface
 {
     protected $config;
+
     protected $provides = [
         'db',
         'book_model',
     ];
 
+    /**
+     * Constructor.
+     *
+     * @param ConfigValues $config Configuration values.
+     */
     public function __construct(ConfigValues $config)
     {
         $this->config = $config;
     }
 
+    /**
+     * Register services.
+     *
+     * @throws Exception If the database configuration is missing.
+     */
     public function register()
     {
         $container = $this->getContainer();
@@ -29,7 +40,11 @@ class DatabaseServiceProvider extends AbstractServiceProvider implements Bootabl
         $dbConfig = $this->config->get('database.connections.mysql', []);
 
         if (empty($dbConfig)) {
-            throw new Exception('Database configuration is missing.');
+            // Throw an exception if the database configuration is missing
+            throw new Exception(
+                /* translators: Error message when database configuration is missing */
+                __('Database configuration is missing.', 'book-information')
+            );
         }
 
         // Create Capsule instance
@@ -49,6 +64,9 @@ class DatabaseServiceProvider extends AbstractServiceProvider implements Bootabl
         $container->add('book_model', \BookInformation\Models\Book::class);
     }
 
+    /**
+     * Boot the plugin provider.
+     */
     public function bootPlugin()
     {
         // No additional booting required here
