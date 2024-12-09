@@ -37,7 +37,7 @@ This plugin allows you to manage book information within your WordPress site. It
      - **Via Git:**  
        ```bash
        cd /path/to/wordpress/wp-content/plugins/
-       git clone https://github.com/ayroop/book-information.git
+       git clone https://github.com/ayroop/Book-Information.git
        ```
      - **Manual Download:**  
        Download the ZIP file from the repository and extract it into the `wp-content/plugins/` directory.
@@ -46,7 +46,7 @@ This plugin allows you to manage book information within your WordPress site. It
 
    - Navigate to the plugin directory:
      ```bash
-     cd /path/to/wordpress/wp-content/plugins/book-information
+     cd /path/to/wordpress/wp-content/plugins/Book-Information
      ```
    - Run Composer to install the required dependencies:
      ```bash
