@@ -46,7 +46,7 @@ This plugin allows you to manage book information within your WordPress site. It
 
    - Navigate to the plugin directory:
      ```bash
-     cd /path/to/wordpress/wp-content/plugins/book-information-management
+     cd /path/to/wordpress/wp-content/plugins/book-information
      ```
    - Run Composer to install the required dependencies:
      ```bash
